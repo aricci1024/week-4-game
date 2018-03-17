@@ -96,7 +96,7 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="guess">
-                <h3>Total Score:</h3>
+                <h3>Total Score: <span id="your-score"></span></h3>
             </div>
         </div>
     </div>
@@ -109,8 +109,8 @@
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="progress">
-                <h3>Wins: </h3>
-                <h3>Losses: </h3>
+                <h3>Wins: <span id="wins"></span></h3>
+                <h3>Losses: <span id="losses"></span></h3>
             </div>
         </div>
     </div>
@@ -129,6 +129,8 @@
   var crystals = $("#crystals");
 
   var counter = 0;
+  var wins = 0;
+  var losses = 0;
 
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
@@ -169,20 +171,25 @@
     // We then add the crystalValue to the user's "counter" which is a global variable.
     // Every click, from every crystal adds to the global counter.
     counter += crystalValue;
+    $("#your-score").text(counter);
 
     // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
-
     if (counter === targetNumber) {
-      alert("You win!");
+        wins ++;
+        $("#wins").text(wins);
     }
 
     else if (counter >= targetNumber) {
-      alert("You lose!!");
+        losses ++
+        $("#losses").text(losses);
     }
+
+    //jquery to display NUMBER of wins and NUMBER of losses and score -- use jquery to replace .getElementID getDocument stuff
+        //use hang man stuff but change to jquery
 
   });
 
   </script>
 </body>
 </html>
+
