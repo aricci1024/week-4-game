@@ -1,0 +1,81 @@
+body {
+    background: url("../images/pexels-photo-430207.jpg");
+}
+
+h1 {
+    background-color: aliceblue;
+    margin: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+.instructions {
+    background-color: aliceblue;
+    margin:20px;
+    padding: 20px;
+}
+
+.crystal-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.number {
+    background-color: aliceblue;
+    margin: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.progress {
+    background-color:aliceblue;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 180px;
+    text-align: center;
+}
+
+.mycontainer {
+    background: aliceblue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.guess {
+    background-color:aliceblue;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.reset {
+    background-color:aliceblue;
+    margin: 10px;
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#winner-loser {
+    background-color:aliceblue;
+    margin: 10px;
+    padding: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}

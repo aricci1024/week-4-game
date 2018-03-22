@@ -1,96 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Crystal Collector</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <style type="text/css">
-
-    body {
-        background: url("assets/images/pexels-photo-430207.jpg");
-    }
-
-    h1 {
-        background-color: aliceblue;
-        margin: 20px;
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-bottom: 20px;
-        text-align: center;
-    }
-
-    h2 {
-        text-align: center;
-        padding-bottom: 20px;
-        border-bottom: 2px solid black;
-    }
-
-    .instructions {
-        background-color: aliceblue;
-        margin:20px;
-        padding: 20px;
-    }
-
-    .crystal-image {
-      width: 100px;
-      height: 100px;
-      margin: 10px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    .number {
-        background-color: aliceblue;
-        margin: 20px;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .progress {
-        background-color:aliceblue;
-        margin: 20px;
-        padding-top: 20px;
-        padding-bottom: 180px;
-        text-align: center;
-    }
-
-    .mycontainer {
-        background: aliceblue;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .guess {
-        background-color:aliceblue;
-        margin: 20px;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .reset {
-        background-color:aliceblue;
-        margin: 10px;
-        padding: 12px;
-        margin-left: 20px;
-        margin-right: 20px;
-        text-align: center;
-    }
-
-    #winner-loser {
-        background-color:aliceblue;
-        margin: 10px;
-        padding: 1px;
-        margin-left: 20px;
-        margin-right: 20px;
-        text-align: center;
-    }
-
-  </style>
-
+    <title>Crystal Collector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <h1 class= "jumbotron">Crystal Collector</h1>
 
@@ -136,85 +51,10 @@
             </div>
         </div>
     </div>
-
-    <!-- JAVASCRIPT  -->
-    <!-- ========================================= -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-
-    //Some global variables
-    var targetNumber = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
-    $("#number-to-guess").text(targetNumber);
-
-    var crystals = $("#crystals");
-
-    var counter = 0;
-    var wins = 0;
-    var losses = 0;
-    
-    var gameStart = function () {
-
-        //empty the value of the crystal at the start of the game
-        $("#crystals").empty();
-        
-        //Loop to crate crystal img and value for 4 images
-        for (var i = 0; i < 4; i++) {
-            //generate random number for the user to get to
-            var givenValue = Math.floor(Math.random() * 11) + 1;
-            var imageCrystal = $("<img>");
-
-            imageCrystal.addClass("crystal-image");
-
-            imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
-
-            imageCrystal.attr("data-crystalvalue", givenValue);
-            console.log(givenValue);
-
-            //Add crystal image to page
-            crystals.append(imageCrystal);
-        }
-    }
-
-    gameStart();
-
-    //Everytime a crystal is clicked applies the same thing
-    $(document).on("click", ".crystal-image", function () {
-
-        //Determining the crystal's value then grab its value when the crystal is clicked then converts it from a string to a integer
-        var crystalValue = ($(this).attr("data-crystalvalue"));
-        crystalValue = parseInt(crystalValue);
-        
-        //Add the in integer of the crystal clicked to the score counter
-        counter += crystalValue;
-        $("#your-score").text(counter);
-
-        //Win or loss counter and text display
-        if (counter === targetNumber) {
-            wins ++;
-            $("#wins").text(wins);
-            $("#you-win-lose").text("You Win!");
-            counter = 0;
-            reset();
-        }
-
-        else if (counter >= targetNumber) {
-            losses ++
-            $("#losses").text(losses);
-            $("#you-win-lose").text("You Lose!");
-            counter = 0;
-            reset();
-        }
-    });
-
-    var reset = function() {
-        counter = 0;
-        targetNumber = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
-        $("#number-to-guess").text(targetNumber);
-        gameStart();
-    }
-
-  </script>
 </body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </html>
 
